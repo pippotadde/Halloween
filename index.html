@@ -100,8 +100,10 @@
 
   <script>
   // 🔧 Imposta il tuo numero WhatsApp (solo se vuoi mantenere la parte dolcetto)
-  const WHATSAPP_NUMBER = "3920448340";
-  const MESSAGE = "Dolcetto%20o%20scherzetto%3F%20Sono%20pronto%20per%20i%20dolci%21";
+  const WHATSAPP_NUMBER = "393331112233";
+  const MESSAGE_RAW = "Ciao! mi chaimo...";
+  const MESSAGE = encodeURIComponent(MESSAGE_RAW);
+
 
   // Pulsante DOLCETTO (resta invariato)
   document.getElementById("dolcetto").addEventListener("click", () => {
@@ -140,3 +142,4 @@
 
 </body>
 </html>
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scherzetto 👻</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #3d0070, #000);
+      color: #fff8e7;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.2rem;
+      color: #ff7518;
+      text-shadow: 0 0 10px #ff6600;
+      margin: 12px 20px;
+    }
+    .ghost {
+      font-size: 4rem;
+      animation: float 2s infinite ease-in-out;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="ghost">👻</div>
+  <h1 id="saluto">Ciao!</h1>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const found = params.get("found") === "1";
+    const nome = params.get("nome") || "";
+    const cognome = params.get("cognome") || "";
+
+    let messaggio;
+    if (found) {
+      // se il browser aveva autocompilato qualcosa
+      messaggio = `Ciao ${nome || ""} ${cognome || ""}, e grazie per i tuoi dati! 😈`;
+    } else {
+      // se non ha trovato nulla
+      messaggio = `Ciao e grazie per i tuoi dati! 👻`;
+    }
+
+    document.getElementById("saluto").textContent = messaggio;
+  </script>
+</body>
+</html>
